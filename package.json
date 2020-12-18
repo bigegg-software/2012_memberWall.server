@@ -1,0 +1,22 @@
+{
+  "name": "2012_memberWall.server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bigegg/s3-files-adapter": "^1.2.2",
+    "@bigegg/parse-server-schema-config": "*",
+    "aws-sdk": "^2.449.0",
+    "express": "^4.16.4",
+    "dotenv": "^8.2.0",
+    "parse-server": "^3.3.0",
+    "node-fetch": "^2.5.0",
+    "cron": "^1.7.2"
+  }
+}
