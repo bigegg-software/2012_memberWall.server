@@ -117,7 +117,7 @@ async function updateDingDingData() {
             return dept_ids.indexOf(item.id) > -1 
         })
         if (deptInfos.length  == 2){
-            if (deptInfos[1].parentid == deptInfos[0].id){
+            if (deptInfos[0].parentid == deptInfos[1].id){
                 deptInfos.reverse();
             }
         }
