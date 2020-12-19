@@ -98,15 +98,7 @@ async function updateMemberInfo(memberInfo, departList) {
 
 
 setTimeout(async () => {
-    // await updateDingDingData()
-    let access_token = await getAccessToken()
-    let dep_list = await getUserDepartmentUserList(access_token, '3223435464657618')
-    console.log("dep_list", dep_list);
-    let parent_dept_id_list = dep_list[0].parent_dept_id_list
-    let dept_length = parent_dept_id_list.length;
-    let dept_ids = dept_length > 3 ? parent_dept_id_list.splice(dept_length - 4, 2) : parent_dept_id_list.splice(dept_length - 3, 1)
-    console.log("dept_ids", dept_ids);
-
+    await updateDingDingData()
 }, 1000);
 
 //更新所有的用户数据
@@ -120,7 +112,7 @@ async function updateDingDingData() {
         let dep_list = await getUserDepartmentUserList(access_token, userInfo.userid)
         let parent_dept_id_list = dep_list[0].parent_dept_id_list
         let dept_length = parent_dept_id_list.length;
-        let dept_ids = dept_length > 3 ? parent_dept_id_list.slice(dept_length - 4, 2) : parent_dept_id_list.slice(dept_length - 3, 1)
+        let dept_ids = dept_length > 3 ? parent_dept_id_list.splice(dept_length - 4, 2) : parent_dept_id_list.splice(dept_length - 3, 1)
         let deptInfos = departmentList.filter(item => {
             return dept_ids.indexOf(item.id) > -1
         })
