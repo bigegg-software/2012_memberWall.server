@@ -116,6 +116,11 @@ async function updateDingDingData() {
         let deptInfos = departmentList.filter(item=>{
             return dept_ids.indexOf(item.id) > -1 
         })
+        if (deptInfos.length  == 2){
+            if (deptInfos[1].parentid == deptInfos[0].id){
+                deptInfos.reverse();
+            }
+        }
         let userDetail = await getUserDetail(access_token,userInfo.userid)
         updateMemberInfo(userDetail,deptInfos)
     }
