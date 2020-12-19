@@ -20,6 +20,9 @@ const Member = {
         email: {
             type: 'string'
         },
+        active: {
+            type: 'boolean'
+        },
         departList: {
             type: 'array'
         }

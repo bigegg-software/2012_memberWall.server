@@ -91,6 +91,7 @@ async function updateMemberInfo(memberInfo,departList) {
         'work_place': memberInfo.work_place,
         'email': memberInfo.email,
         'departList': departList,
+        'active':memberInfo.active
     }, { useMasterKey: true });
     console.log("userInfo",res.toJSON())
 }
